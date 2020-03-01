@@ -75,22 +75,10 @@ else{
     <div class="col-4 mx-auto">
       <img style="width:150px;height:auto;" src="images/<?=$user_row['photo']?>" alt="">
 
-      <?php
-        if(isset($_POST['upload'])){
-          $photo= $_FILES['photo']['name'];
-          $photo_ext = explode('.',$photo);
-          $photo_temp = end($photo_ext);
-          $photo_name = $user_name.'.'.$photo_temp;
-          $photo_query = $dbcon->query("UPDATE users SET photo='$photo_name' WHERE username='$user_name'");
-            if($photo_query){
-              move_uploaded_file($_FILES['photo']['tmp_name'],'images/'.$photo_name);
-              header('location: index.php?page=profile');
-            }
-        }
-      ?>
+
 <!-- ================== form under photo ================== -->
 
-      <form class="" action="" method="post" enctype="multipart/form-data">
+      <form class="" action="profile_valid.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
         <label for="upload">change photo</label>
         <br>
