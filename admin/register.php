@@ -131,7 +131,7 @@ if (isset($_POST['register'])) {
         <div class="card m-auto">
 
           <div class="card-header bg-success text-center">
-            <h2>Admin Regestration Page</h2>
+            <h2>Admin Registration Page</h2>
 
             <!-- // if(isset($_SESSION['dsuccess'])){
               //   $insert_message = $_SESSION['dsuccess'];
