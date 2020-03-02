@@ -4,57 +4,57 @@ require_once('dbcon.php');
 if(!isset($_SESSION['user_login'])){
   header('location: login.php');
 }
-else{
+$title = "add student";
 require "header.php";
 
 // ========================  add student page ===========================
 
 
 if(isset($_POST['add_student'])){
-$name = $_POST['name'];
-$roll = $_POST['roll'];
-$department = $_POST['department'];
-$semester = $_POST['semester'];
-$cgpa = $_POST['cgpa'];
-$photo = $_FILES['photo']['name'];
-$photo_ext = explode('.',$photo);
-$photo_name = $roll.'.'.end($photo_ext);
+  $name = $_POST['name'];
+  $roll = $_POST['roll'];
+  $department = $_POST['department'];
+  $semester = $_POST['semester'];
+  $cgpa = $_POST['cgpa'];
+  $photo = $_FILES['photo']['name'];
+  $photo_ext = explode('.',$photo);
+  $photo_name = $roll.'.'.end($photo_ext);
 
-$input_error = [];
-if(empty($name)){
-  $input_error['name'] = "*Enter a name";
-}
-else if(preg_match('@[0-9]@',$name)){
-  $input_error['name']="*Name not allow number";
-}
-if(empty($roll)){
-  $input_error['roll'] = "*Enter a roll";
-}
-else if(!is_numeric($roll)){
-  $input_error['roll']="Enter a number";
-}
-if(empty($department)){
-  $input_error['department'] = "*Enter department";
-}
-if(empty($semester)){
-  $input_error['semester'] = "*Enter a semester";
-}
-if(empty($cgpa)){
-  $input_error['cgpa'] = "*Enter cgpa";
-}
-else if(!is_numeric($cgpa)){
-  $input_error['cgpa']="Enter a number";
-}
-else if($cgpa<0 || $cgpa>4){
-  $input_error['cgpa'] = "*You enter a wrong cgpa";
-}
-if(empty($photo)){
-  $input_error['photo']="*Attached a photo";
-}
-if(count($input_error)==0){
-  $check_roll_query = "SELECT * FROM students WHERE roll=$roll AND department='$department'";
-  $check_roll = $dbcon->query($check_roll_query);
-  if($check_roll->num_rows==0){
+  $input_error = [];
+  if(empty($name)){
+    $input_error['name'] = "*Enter a name";
+  }
+  else if(preg_match('@[0-9]@',$name)){
+    $input_error['name']="*Name not allow number";
+  }
+  if(empty($roll)){
+    $input_error['roll'] = "*Enter a roll";
+  }
+  else if(!is_numeric($roll)){
+    $input_error['roll']="Enter a number";
+  }
+  if(empty($department)){
+    $input_error['department'] = "*Enter department";
+  }
+  if(empty($semester)){
+    $input_error['semester'] = "*Enter a semester";
+  }
+  if(empty($cgpa)){
+    $input_error['cgpa'] = "*Enter cgpa";
+  }
+  else if(!is_numeric($cgpa)){
+    $input_error['cgpa']="Enter a number";
+  }
+  else if($cgpa<0 || $cgpa>4){
+    $input_error['cgpa'] = "*You enter a wrong cgpa";
+  }
+  if(empty($photo)){
+    $input_error['photo']="*Attached a photo";
+  }
+  if(count($input_error)==0){
+    $check_roll_query = "SELECT * FROM students WHERE roll=$roll AND department='$department'";
+    $check_roll = $dbcon->query($check_roll_query);
+    if($check_roll->num_rows==0){
     
     // insert query code
 
@@ -77,16 +77,22 @@ if(count($input_error)==0){
 ?>
 
 
+<!-- ================================= template  ======================== -->
+  <!-- Start Page content -->
+  <div class="content">
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card-box">
+                              
+
+<!-- ===================== start page content ==================== -->
+
 
 <div class="col-8 mx-auto my-3">
   <div class="content">
-    <h2 class="text-primary"><i class="fas fa-user-plus"></i> Add student </h2>
-    <div aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item active" aria-current="page"> <a href='index.php?page=dashboard'><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-      <li class="breadcrumb-item active" aria-current="page"><i class="fas fa-user-plus"></i> add student result</li>
-    </ol>
-  </div>
+    
 
   <div class="">
 
@@ -200,8 +206,16 @@ if(count($input_error)==0){
 </div>
 
 
+<!-- ============================== template ====================== -->
+
+</div>
+          </div>
+      </div>
+  </div> <!-- container -->
+</div> <!-- content -->
+
 <!-- ========================= footer part ================== -->
 
 <?php
 require_once 'footer.php';
-} ?>
+?>

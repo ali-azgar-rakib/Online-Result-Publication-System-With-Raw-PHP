@@ -9,10 +9,12 @@
     body{
     margin: 0;
     padding: 0;
-    background-image: url('mun_poly.jpg');
+    
+    bottom: 0;
+    background-image: url('https://scontent.fdac20-1.fna.fbcdn.net/v/t1.0-9/s960x960/57262751_1307866209389929_7376968559831810048_o.jpg?_nc_cat=101&_nc_sid=ca434c&_nc_oc=AQlZN901pKaftY4Dr2_jBQvf0_e990EciIvibdL3HsaHgiJowEiPtiRPtlDvstFXgXE&_nc_ht=scontent.fdac20-1.fna&_nc_tp=7&oh=1a71c625ce57ffbb357c72caaef055fc&oe=5EF95B6C');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    
     opacity: .9;
 
 

@@ -5,22 +5,27 @@ require_once('dbcon.php');
 if(!isset($_SESSION['user_login'])){
   header('location: login.php');
 }
-
-else{
-  require "header.php";
+  $title="profile";
+  require_once "header.php";
 ?>
+
+<!-- ================================= template  ======================== -->
+  <!-- Start Page content -->
+  <div class="content">
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card-box">
+                              
+
+
 
 <!-- ================= profile page code ========================= -->
 
 <div class="col-9 my-3">
   <div class="content">
-    <h2 class="text-primary"><i class="fas fa-user"></i> profile</h2>
-    <div aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item active" aria-current="page"><a href="index.php?page=dashboard"><i class="fas fa-tachometer-alt"></i>Dashboard</a></li>
-        <li  class="breadcrumb-item active" aria-current="page"><i class="fas fa-user"></i> user</li>
-      </ol>
-    </div>
+
 
     <!-- ===================== check data and take data from db================= -->
 
@@ -96,9 +101,19 @@ else{
 </div>
 </div>
 
+
+
+<!-- ============================== template ====================== -->
+
+              </div>
+          </div>
+      </div>
+  </div> <!-- container -->
+</div> <!-- content -->
+
 <!-- ================================ footer ==================== -->
 
 
 <?php
-require_once 'footer.php';
-} ?>
+require_once 'footer.php'; 
+?>

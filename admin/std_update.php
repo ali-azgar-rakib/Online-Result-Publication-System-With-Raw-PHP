@@ -5,7 +5,7 @@ require_once('dbcon.php');
 if(!isset($_SESSION['user_login'])){
   header('location: login.php');
 }
-else{
+$title = "update student data";
 require "header.php";
 
 
@@ -36,18 +36,23 @@ header('location: all_student.php');
 }
 ?>
 
-
-
-<div class="col-8 mx-auto my-3">
+<!-- ================================= template  ======================== -->
+  <!-- Start Page content -->
   <div class="content">
-    <h2 class="text-primary"><i class="fas fa-user-edit"></i> Update student Data </h2>
-    <div aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item active" aria-current="page"> <a href='index.php?page=dashboard'><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-      <li class="breadcrumb-item active" aria-current="page"><a href="index.php?page=all_student" ><i class="fas fa-users"></i> all student</li></a>
-      <li class="breadcrumb-item active" aria-current="page"><i class="fas fa-user-edit"></i> update student data</li>
-    </ol>
-  </div>
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card-box">
+                              
+
+
+
+<!-- ====================page content star here ==================== -->
+
+<div class="col-10 mx-auto my-3">
+  <div class="content">
+    
 
 
   <div class="">
@@ -111,6 +116,14 @@ header('location: all_student.php');
 </div>
 </div>
 
+<!-- ============================== template ====================== -->
+
+</div>
+          </div>
+      </div>
+  </div> <!-- container -->
+</div> <!-- content -->
+
 <?php
 require_once 'footer.php';
-} ?>
+?>

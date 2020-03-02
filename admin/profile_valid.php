@@ -12,6 +12,7 @@ if(isset($_POST['upload'])){
     if($photo_query){
         move_uploaded_file($_FILES['photo']['tmp_name'],'images/'.$photo_name);
         header("location: profile.php");
+        
     }
 }
 ?>

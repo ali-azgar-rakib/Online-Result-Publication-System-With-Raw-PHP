@@ -4,22 +4,29 @@ require_once('dbcon.php');
 if(!isset($_SESSION['user_login'])){
   header('location: login.php');
 }
-else{
+$title="all users";
 require "header.php";
 ?>
 
+<!-- ================================= template  ======================== -->
+  <!-- Start Page content -->
+  <div class="content">
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card-box">
+                              
+
+
+
+
 <!-- ========================== all user code start ==================== -->
 
-<div class="col-8 mx-auto mt-3">
+<div class="col-10 mx-auto mt-3">
   <div class="content">
 
-    <h2 class="text-primary"><i class="fas fa-users"></i> All Users</h2>
-    <div aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item active" aria-current="page"> <a style="text-decoration:none;" href='index.php?page=dashboard'><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-      <li class="breadcrumb-item active" aria-current="page"><i class="fas fa-users"></i> all user</li>
-    </ol>
-  </div>
+
 
 <h3>Users Table</h3>
 <table id="example" class="table table-bordered table-striped table-hover" style="width:100%;">
@@ -56,8 +63,18 @@ require "header.php";
 </div>
 </div>
 
+
+<!-- ============================== template ====================== -->
+
+</div>
+          </div>
+      </div>
+  </div> <!-- container -->
+</div> <!-- content -->
+
+
 <!-- ========================= footer part ========================== -->
 
 <?php
 require_once 'footer.php';
-} ?>
+ ?>

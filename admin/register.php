@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 require_once 'dbcon.php';
@@ -112,46 +113,57 @@ if (isset($_POST['register'])) {
 <!doctype html>
 <html lang="en">
 
+
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta charset="utf-8" />
+        <title>Highdmin - Responsive Bootstrap </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-  <title>Registration page</title>
-</head>
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/metismenu.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
 
-<body>
-  <div class="container">
-    <div class="row">
-      <div class="col-6 m-auto">
-        <!-- ===========================Card================== -->
-        <div class="card m-auto">
+        <script src="assets/js/modernizr.min.js"></script>
 
-          <div class="card-header bg-success text-center">
-            <h2>Admin Registration Page</h2>
+    </head>
 
-            <!-- // if(isset($_SESSION['dsuccess'])){
-              //   $insert_message = $_SESSION['dsuccess'];
-              //   echo $insert_message;
-              //   if(isset($insert_message)){
-              //     unset($_SESSION['dsuccess']);
-              //   }
-              // } -->
 
-          </div>
-          <div class="card-body">
+    <body >
 
-            <!-- =============================form===================               -->
+        <!-- Begin page -->
+        <div class="accountbg" style="background: url('https://scontent.fdac20-1.fna.fbcdn.net/v/t1.0-9/p720x720/70884052_679920399194756_4461503484671295488_o.jpg?_nc_cat=109&_nc_sid=07e735&_nc_oc=AQk5qBC_fbb1cCJK4oEcrno3dWZl-X9k9rXUd8N8KPDSSlUBMYs5KL4E3H1yEpC8vhA&_nc_ht=scontent.fdac20-1.fna&_nc_tp=6&oh=13213399ab4218da92241b5ac4cdc44a&oe=5EF5C730');background-size: cover;"></div>
+
+        <div class="wrapper-page account-page-full">
+
+            <div class="card">
+                <div class="card-block">
+
+                    <div class="account-box">
+
+                        <div class="card-box p-5">
+                        <a style="margin-left: 200px;" href="../index.php" class="text-success">
+                                    <span><img src="http://www.munpoly.gov.bd/images/mpi.png" alt="" height="50"></span>
+                                </a>
+                            <h4 class="text-uppercase text-center pb-4">
+                                Munshiganj polytechnic institute
+                            </h4>
+
+             <!-- =============================form===================               -->
             <form class="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
               <!-- =================================Name=================== -->
               <div class="form-group">
                 <label for="name">Name</label>
                 <input class="form-control" type="text" name="name" id="name" value="<?php if (isset($name)) {
-                                                                                        echo $name;
-                                                                                      } ?>" placeholder="Enter name">
+                  echo $name;
+                } ?>" placeholder="Enter name">
                 <label style="color:red; font-style:italic;">
                   <?php
                   if (isset($input_error['name'])) {
@@ -165,8 +177,8 @@ if (isset($_POST['register'])) {
               <div class="form-group">
                 <label for="username">Username</label>
                 <input class="form-control" type="text" name="username" id="username" value="<?php if (isset($username)) {
-                                                                                                echo $username;
-                                                                                              } ?>" placeholder="Enter your username">
+                    echo $username;
+                } ?>" placeholder="Enter your username">
                 <label style="color:red; font-style:italic;">
                   <?php
                   if (isset($input_error['username'])) {
@@ -197,8 +209,8 @@ if (isset($_POST['register'])) {
               <div class="form-group">
                 <label for="email">E-mail</label>
                 <input class="form-control" type="text" name="email" id="email" value="<?php if (isset($email)) {
-                                                                                          echo $email;
-                                                                                        } ?>" placeholder="Enter a email">
+                  echo $email;
+                } ?>" placeholder="Enter a email">
                 <label style="color:red; font-style:italic;">
                   <?php
                   if (isset($input_error['email'])) {
@@ -221,8 +233,8 @@ if (isset($_POST['register'])) {
               <div class="form-group">
                 <label for="password">Password</label>
                 <input class="form-control" type="password" name="password" id="password" value="<?php if (isset($password)) {
-                                                                                                    echo $password;
-                                                                                                  } ?>" placeholder="Enter a password">
+                  echo $password;
+                } ?>" placeholder="Enter a password">
 
                 <label style="color:red; font-style:italic;">
                   <?php
@@ -270,26 +282,27 @@ if (isset($_POST['register'])) {
 
               </div>
             </form>
-            <!-- ===========================small text ======================== -->
-            <div class="small">
-              already have a account? <a href="login.php">Click here</a>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <p class="text-muted">Already have an account?  <a href="login.php" class="text-dark ml-2"><b>Sign In</b></a></p>
+                </div>
+            </div>
+            <div class="m-t-40 text-center">
+                <p class="account-copyright"><?=date("Y")?> © Munpoly.gov.bd</p>
             </div>
 
-          </div>
-
         </div>
-
-      </div>
-
     </div>
 
+    </div>
   </div>
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
+            
 
+</div>
+        
+    </body>
+
+<!-- Mirrored from coderthemes.com/highdmin/vertical/page-register.html by HTTrack Website Copier/3.x [XR&CO'2014, Tue, 09 Apr 2019 06:52:57 GMT -->
 </html>
