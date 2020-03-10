@@ -23,6 +23,9 @@
         <!-- ========font awesome====== -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+        <!-- ==================== data table ================= -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+
     </head>
 
 
@@ -40,11 +43,12 @@
                     <div class="topbar-left">
                         <a href="index.html" class="logo">
                             <span>
-                                <img src="assets/images/logo.png" alt="" height="22">
+                                <img src="http://www.munpoly.gov.bd/images/mpi.png" alt="" height="30">
+                                <h4 class="d-inline text-dark">MUPI</h4>
                             </span>
-                            <i>
-                                <img src="assets/images/logo_sm.png" alt="" height="28">
-                            </i>
+                           
+                                
+                            
                         </a>
                     </div>
 

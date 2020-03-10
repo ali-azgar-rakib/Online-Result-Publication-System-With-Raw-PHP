@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -64,10 +67,21 @@
 
                                     </div>
                                 </div>
+                                    
+                                 <!-- password change message    -->
+
+                                <?php if(isset($_SESSION['pass_change_success'])){
+                                    echo $_SESSION['pass_change_success'];
+                                }else{  ?>
 
                                 <h4>See You Again !</h4>
 
                                 <p class="text-muted font-14 m-t-10"> You are now successfully sign out. Back to <a href="login.php" class="text-dark m-r-5"><b>Sign In</b></a></p>
+
+                                <!-- php end tag             -->
+
+                                <?php } ?>
+
                             </div>
 
                         </div>

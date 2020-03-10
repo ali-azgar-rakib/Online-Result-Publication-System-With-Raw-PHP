@@ -208,7 +208,7 @@ if(isset($_POST['add_student'])){
 
 <!-- ============================== template ====================== -->
 
-</div>
+            </div>
           </div>
       </div>
   </div> <!-- container -->

@@ -70,8 +70,7 @@ if(!isset($_SESSION['user_login'])){
 
       <!-- ======================= edit button ================= -->
 
-      <input class="btn btn-success" type="submit" name="edit" value="Edit">
-
+<a href="change_password.php" class="btn btn-success btn-block">Change Password</a>
 
     </div>
 
@@ -91,7 +90,7 @@ if(!isset($_SESSION['user_login'])){
         </div>
 
         <div class="form-group">
-        <input class="btn btn-success" type="submit" name="upload" value="Upload">
+        <input class="btn btn-success" type="submit" name="upload" value="Change Photo">
         </div>
       </form>
 
