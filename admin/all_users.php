@@ -1,32 +1,18 @@
 <?php
-session_start();
-require_once('dbcon.php');
-if(!isset($_SESSION['user_login'])){
-  header('location: login.php');
-}
-$title="all users";
-require "header.php";
+if(isset($_SESSION['login_check'])){
 ?>
 
-<!-- ================================= template  ======================== -->
-  <!-- Start Page content -->
-  <div class="content">
-                    <div class="container-fluid">
 
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card-box">
-                              
-
-
-
-
-<!-- ========================== all user code start ==================== -->
-
-<div class="col-10 mx-auto mt-3">
+<div class="col-8 mx-auto mt-3">
   <div class="content">
 
-
+    <h2 class="text-primary"><i class="fas fa-users"></i> All Users</h2>
+    <div aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page"> <a style="text-decoration:none;" href='index.php?page=dashboard'><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><i class="fas fa-users"></i> all user</li>
+    </ol>
+  </div>
 
 <h3>Users Table</h3>
 <table id="example" class="table table-bordered table-striped table-hover" style="width:100%;">
@@ -35,8 +21,8 @@ require "header.php";
       <th>Name</th>
       <th>User name</th>
       <th>emial</th>
-      <th>status</th>
       <th>photo</th>
+      <th>status</th>
 
 
     </tr>
@@ -50,10 +36,10 @@ require "header.php";
 
     ?>
     <tr>
-      <td><?=$row['name'] ?></td>
-      <td><?=$row['username'] ?></td>
-      <td><?=$row['email'] ?></td>
-      <td><?=$row['status']==1?"id active <i style='font-size:11px;color:green;' class='fa fa-circle' aria-hidden='true'></i>":"id deactive <i style='font-size:11px;color:red;' class='fa fa-circle' aria-hidden='true'></i>"?></td>
+      <td><?php echo $row['name'] ?></td>
+      <td><?php echo $row['username'] ?></td>
+      <td><?php echo $row['email'] ?></td>
+      <td><?php echo $row['status'] ?></td>
       <td> <img style="width:30px;height:auto;" src="images/<?php echo $row['photo'] ?>" alt=""> </td>
 
     </tr>
@@ -62,19 +48,9 @@ require "header.php";
 </table>
 </div>
 </div>
-
-
-<!-- ============================== template ====================== -->
-
-</div>
-          </div>
-      </div>
-  </div> <!-- container -->
-</div> <!-- content -->
-
-
-<!-- ========================= footer part ========================== -->
-
 <?php
-require_once 'footer.php';
+}
+else{
+  header('location: login.php');
+}
  ?>

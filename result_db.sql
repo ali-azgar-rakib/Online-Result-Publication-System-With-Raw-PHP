@@ -2,10 +2,10 @@
 -- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 01, 2020 at 01:21 PM
+-- Host: localhost
+-- Generation Time: Jun 21, 2020 at 11:05 AM
 -- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.2
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -58,16 +58,17 @@ CREATE TABLE `users` (
   `email` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `photo` varchar(100) NOT NULL,
-  `status` int(1) NOT NULL DEFAULT 2
+  `status` int(1) NOT NULL DEFAULT 2,
+  `datetime` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `username`, `email`, `password`, `photo`, `status`) VALUES
-(10, 'Rakib', 'crrrakib', 'crrakib5@gmial.com', '$2y$10$M2WR2BdGxdYj2h78i305vOsbxIfXMtnSqHXCAQmwMAyA05VWwzsmq', 'crrrakib.jpg', 1),
-(11, 'rakib', 'rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr', 'rrrrrrrrrrrrr@gmail.com', '$2y$10$yW6wdwYugom5JyiVbAMORevL5RWd0awwYqxM/heq.6wTZBM97bmby', 'rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr.png', 1);
+INSERT INTO `users` (`id`, `name`, `username`, `email`, `password`, `photo`, `status`, `datetime`) VALUES
+(10, 'Rakib', 'crrrakib', 'crrakib5@gmial.com', '1234asdF', 'crrrakib.jpg', 1, '2020-06-21 09:01:52'),
+(11, 'rakib', 'rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr', 'rrrrrrrrrrrrr@gmail.com', '$2y$10$yW6wdwYugom5JyiVbAMORevL5RWd0awwYqxM/heq.6wTZBM97bmby', 'rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr.png', 1, '2020-06-21 09:01:52');
 
 --
 -- Indexes for dumped tables

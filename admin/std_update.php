@@ -1,20 +1,10 @@
 <?php
-session_start();
-require_once('dbcon.php');
-
-if(!isset($_SESSION['user_login'])){
-  header('location: login.php');
-}
-$title = "update student data";
-require "header.php";
-
-
 
 if(isset($_GET['id'])){
-  $id = base64_decode($_GET['id']);
-  $u_sql = "SELECT * FROM students WHERE id=$id";
-  $result = $dbcon->query($u_sql);
-  $array_result =$result->fetch_assoc();
+$id = base64_decode($_GET['id']);
+$u_sql = "SELECT * FROM students WHERE id='$id'";
+$result = $dbcon->query($u_sql);
+$array_result =$result->fetch_assoc();
 }
 
 
@@ -30,36 +20,29 @@ echo $cgpa = $_POST['cgpa'];
 $update_sql = "UPDATE students SET name='$name',roll=$roll,department='$department',semester='$semester',cgpa=$cgpa WHERE id=$id";
 $update_result = $dbcon->query($update_sql);
 if($update_result){
-header('location: all_student.php');
+header('location: index.php?page=all_student');
 }
 
 }
 ?>
 
-<!-- ================================= template  ======================== -->
-  <!-- Start Page content -->
+
+
+<div class="col-8 mx-auto my-3">
   <div class="content">
-                    <div class="container-fluid">
-
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card-box">
-                              
-
-
-
-<!-- ====================page content star here ==================== -->
-
-<div class="col-10 mx-auto my-3">
-  <div class="content">
-    
-
-
+    <h2 class="text-primary"><i class="fas fa-user-edit"></i> Update student Data </h2>
+    <div aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page"> <a href='index.php?page=dashboard'><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><a href="index.php?page=all_student" ><i class="fas fa-users"></i> all student</li></a>
+      <li class="breadcrumb-item active" aria-current="page"><i class="fas fa-user-edit"></i> update student data</li>
+    </ol>
+  </div>
   <div class="">
-    <form class="" action="" method="post">
+    <form class="" action="" method="post" enctype="multipart/form-data">
       <div class="form-group">
-        <label for="name">Name</label>
-        <input class="form-control" type="text" name="name" id='name' value="<?php if(isset($array_result['name'])){
+      <label for="name">Name</label>
+      <input class="form-control" type="text" name="name" id='name' value="<?php if(isset($array_result['name'])){
         echo $array_result['name'];
       } ?>" placeholder="Enter a name">
       </div>
@@ -115,15 +98,3 @@ header('location: all_student.php');
   </div>
 </div>
 </div>
-
-<!-- ============================== template ====================== -->
-
-</div>
-          </div>
-      </div>
-  </div> <!-- container -->
-</div> <!-- content -->
-
-<?php
-require_once 'footer.php';
-?>
